@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "profanity aboba",
+  "version": "0.1",
+	"description": "profanity remover",
+  "permissions": ["scripting", "activeTab"],
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": "hello_extensions.png"
+	},
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["profanityList.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+
